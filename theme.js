@@ -32,6 +32,13 @@
 
   applyTheme(initialTheme());
 
+  requestAnimationFrame(() => {
+    root.classList.add("is-animating");
+    window.setTimeout(() => {
+      root.classList.remove("is-animating");
+    }, 900);
+  });
+
   if (toggle) {
     toggle.addEventListener("click", () => {
       const next = root.dataset.theme === "dark" ? "light" : "dark";
