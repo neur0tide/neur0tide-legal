@@ -131,10 +131,18 @@ main {
 
 .brand-hero--compact .brand-logo {
   height: 5.25rem;
+  max-width: none;
+  margin-bottom: 0.35rem;
 }
 
 .brand-hero--compact .brand-name {
   font-size: clamp(2rem, 7vw, 2.6rem);
+}
+
+.brand-hero--compact .site-credit__email {
+  margin: 0.2rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 /* Transparent button glyph — no icon plate */
@@ -160,6 +168,40 @@ html[data-theme="dark"] .brand-logo {
   line-height: 1.05;
   color: var(--paper);
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-credit {
+  text-align: center;
+}
+
+.site-credit__line {
+  margin: 0;
+  font-size: clamp(1.05rem, 3.5vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--paper-muted);
+}
+
+.site-credit__email {
+  margin: 0.35rem 0 0;
+  font-size: clamp(0.95rem, 3vw, 1.05rem);
+}
+
+.glass-card--credit {
+  text-align: center;
+}
+
 
 .brand-tagline {
   margin: 0.65rem 0 0;
@@ -267,9 +309,12 @@ a.inline {
   font-weight: 600;
 }
 
-footer {
+footer.site-credit {
   margin-top: 2.5rem;
-  text-align: center;
+}
+
+footer.site-credit .site-credit__line,
+.glass-card--credit .site-credit__line {
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--paper-muted);
