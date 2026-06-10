@@ -4,16 +4,16 @@
 
 ```bash
 cd /Users/leafy/workspace/products/neur0tide-legal
-git remote set-url origin git@github.com:neur0tide/neur0tide-web.git
+git remote set-url origin git@github.com:neur0tide/neur0tide-legal.git
 git push -u origin main
 ```
 
-Create the empty repo first on GitHub: **neur0tide/neur0tide-web** (public is fine).
+Create the empty repo first on GitHub: **neur0tide/neur0tide-legal** (public is fine).
 
 ## 2. Connect Vercel
 
 1. [vercel.com](https://vercel.com) → sign in with **GitHub** (the neur0tide business account)
-2. **Add New Project** → import **neur0tide/neur0tide-web**
+2. **Add New Project** → import **neur0tide/neur0tide-legal**
 3. Settings:
    - **Framework Preset:** Other
    - **Root Directory:** `./`

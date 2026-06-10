@@ -2,7 +2,7 @@
 
 Static site for **neur0tide.com** — privacy, support, and landing page.
 
-Deployed via **Vercel** from GitHub repo **neur0tide/neur0tide-web**.
+Deployed via **Vercel** from GitHub repo **neur0tide/neur0tide-legal**.
 
 | Guide | Use |
 |-------|-----|
