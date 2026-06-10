@@ -139,10 +139,12 @@ main {
   font-size: clamp(2rem, 7vw, 2.6rem);
 }
 
-.brand-hero--compact .site-credit__email {
-  margin: 0.2rem 0 0;
-  font-size: 0.95rem;
-  font-weight: 500;
+.brand-hero--compact:has(.brand-tagline) {
+  margin-bottom: 2.25rem;
+}
+
+.brand-hero--compact .brand-tagline {
+  margin-top: 1.15rem;
 }
 
 /* Transparent button glyph — no icon plate */
@@ -192,16 +194,6 @@ html[data-theme="dark"] .brand-logo {
   letter-spacing: -0.01em;
   color: var(--paper-muted);
 }
-
-.site-credit__email {
-  margin: 0.35rem 0 0;
-  font-size: clamp(0.95rem, 3vw, 1.05rem);
-}
-
-.glass-card--credit {
-  text-align: center;
-}
-
 
 .brand-tagline {
   margin: 0.65rem 0 0;
@@ -313,9 +305,16 @@ footer.site-credit {
   margin-top: 2.5rem;
 }
 
-footer.site-credit .site-credit__line,
-.glass-card--credit .site-credit__line {
+footer.site-credit .site-credit__line {
   font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--paper-muted);
+}
+
+.site-email {
+  margin: 0.45rem 0 0;
+  text-align: center;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--paper-muted);
 }
