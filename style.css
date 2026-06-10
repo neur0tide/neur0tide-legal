@@ -52,6 +52,10 @@ html[data-theme="dark"] {
   box-sizing: border-box;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -111,8 +115,9 @@ html[data-theme="dark"] .theme-toggle .icon-sun,
 }
 
 main {
+  width: 100%;
   max-width: 42rem;
-  margin: 0 auto;
+  margin-inline: auto;
   padding: 4.5rem 1.35rem 4rem;
 }
 
@@ -139,20 +144,22 @@ main {
   font-size: clamp(2rem, 7vw, 2.6rem);
 }
 
-.brand-hero--compact:has(.brand-tagline) {
+.brand-hero--compact:has(.brand-tagline:first-of-type) {
   margin-bottom: 2.25rem;
 }
 
-.brand-hero--compact .brand-tagline {
+.brand-hero--compact .brand-tagline:first-of-type {
   margin-top: 1.15rem;
 }
 
 /* Transparent button glyph — no icon plate */
 .brand-logo {
+  display: block;
   width: auto;
   height: 8.5rem;
   max-width: min(92vw, 22rem);
   object-fit: contain;
+  margin-inline: auto;
   margin-bottom: 0.85rem;
   filter: drop-shadow(0 10px 28px rgba(0, 0, 40, 0.14));
   transition: filter 0.35s ease;
@@ -164,11 +171,14 @@ html[data-theme="dark"] .brand-logo {
 
 .brand-name {
   margin: 0;
+  padding: 0;
+  width: 100%;
   font-size: clamp(2.6rem, 9vw, 3.75rem);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.05;
   color: var(--paper);
+  text-align: center;
 }
 
 .visually-hidden {
@@ -196,15 +206,21 @@ html[data-theme="dark"] .brand-logo {
 }
 
 .brand-tagline {
-  margin: 0.65rem 0 0;
-  max-width: 22rem;
+  margin: 0;
+  max-width: 34rem;
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--paper-muted);
-  line-height: 1.45;
+  line-height: 1.5;
+}
+
+.brand-tagline + .brand-tagline {
+  margin-top: 1rem;
 }
 
 a.brand-link {
+  display: block;
+  width: 100%;
   text-decoration: none;
   color: inherit;
 }
