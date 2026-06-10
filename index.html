@@ -1,42 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="neur0tide — brainwave support audio for iOS. Headphone-based wellness app by ster0mode.">
+  <meta name="description" content="neur0tide — brainwave support audio for iOS. Headphone-based wellness app by stere0tide.">
   <link rel="canonical" href="https://neur0tide.com/">
   <title>neur0tide</title>
   <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/app-icon-light.png" type="image/png">
+  <script>
+    (function () {
+      var t = localStorage.getItem("neur0tide-theme");
+      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        document.documentElement.dataset.theme = "dark";
+    })();
+  </script>
 </head>
 <body>
+  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle bright and dark mode">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a6.5 6.5 0 0 0 11.5 11.5z"/>
+    </svg>
+  </button>
+
   <main>
-    <a class="site-mark" href="/">
-      <img src="/logo.svg" alt="" width="48" height="32">
-      <span>neur0tide</span>
-    </a>
-
-    <div class="home-hero">
-      <h1>Brainwave support audio for iOS</h1>
-      <p class="lede">
-        Four waves for focus, memory, relax, and sleep. Headphones recommended.
-        General wellness — not a medical device.
+    <header class="brand-hero">
+      <img
+        class="app-icon"
+        id="appIcon"
+        src="/assets/app-icon-light.png"
+        data-light="/assets/app-icon-light.png"
+        data-dark="/assets/app-icon-dark.png"
+        width="120"
+        height="120"
+        alt="neur0tide app icon"
+      >
+      <h1 class="brand-name">neur0tide</h1>
+      <p class="brand-tagline">
+        Brainwave support audio for iOS. Four waves — focus, memory, relax, and sleep.
+        Headphones recommended. General wellness, not a medical device.
       </p>
-    </div>
+    </header>
 
-    <nav>
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/support">Support</a>
+    <nav class="nav-row">
+      <a class="glass-pill glass-pill--primary" href="/privacy">Privacy Policy</a>
+      <a class="glass-pill" href="/support">Support</a>
     </nav>
 
-    <div class="home-card">
+    <div class="glass-card">
       <p>
-        neur0tide is developed by <strong>ster0mode</strong>. Questions:
+        Developed by <strong>stere0tide</strong>.
         <a class="inline" href="mailto:support@neur0tide.com">support@neur0tide.com</a>
       </p>
     </div>
 
-    <footer>© ster0mode · neur0tide</footer>
+    <footer>© stere0tide · neur0tide</footer>
   </main>
+  <script src="/theme.js"></script>
 </body>
 </html>

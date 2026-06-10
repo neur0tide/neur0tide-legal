@@ -1,24 +1,51 @@
+/* neur0tide.com — themes match the iOS app (Relax light / Sleep dark) */
+
 :root {
-  color-scheme: light dark;
-  --bg: #f5f5f5;
-  --paper: #000028;
-  --muted: rgba(0, 0, 40, 0.72);
-  --surface: rgba(0, 0, 40, 0.06);
-  --border: rgba(0, 0, 40, 0.12);
-  --accent: #5f78d8;
-  --glow: rgba(95, 120, 216, 0.18);
+  --radius-card: 1.25rem;
+  --radius-pill: 999px;
+  --font-rounded: -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #05071c;
-    --paper: #f5f5f5;
-    --muted: rgba(245, 245, 245, 0.72);
-    --surface: rgba(245, 245, 245, 0.08);
-    --border: rgba(245, 245, 245, 0.14);
-    --accent: #8ea4ff;
-    --glow: rgba(142, 164, 255, 0.14);
-  }
+/* Bright — Relax wave (light mode in app) */
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg-0: #f5f5f5;
+  --bg-1: #eff4f1;
+  --bg-2: #e8f0ee;
+  --paper: #000028;
+  --paper-muted: rgba(0, 0, 40, 0.7);
+  --surface: rgba(0, 0, 40, 0.06);
+  --surface-border: rgba(0, 0, 40, 0.12);
+  --glass: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(0, 0, 40, 0.1);
+  --accent: #4e9c92;
+  --accent-soft: #4faea0;
+  --glow-a: rgba(79, 174, 160, 0.28);
+  --glow-b: rgba(124, 205, 190, 0.22);
+  --btn-fill: #000028;
+  --btn-text: #f5f5f5;
+  --icon-shadow: 0 18px 48px rgba(0, 0, 40, 0.14);
+}
+
+/* Dark — Sleep wave (dark mode in app) */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-0: #05071c;
+  --bg-1: #080e24;
+  --bg-2: #0c122a;
+  --paper: #f5f5f5;
+  --paper-muted: rgba(245, 245, 245, 0.72);
+  --surface: rgba(255, 255, 255, 0.1);
+  --surface-border: rgba(255, 255, 255, 0.14);
+  --glass: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --accent: #b3b8f1;
+  --accent-soft: #8a93e6;
+  --glow-a: rgba(138, 147, 230, 0.22);
+  --glow-b: rgba(98, 115, 214, 0.18);
+  --btn-fill: #f5f5f5;
+  --btn-text: #000028;
+  --icon-shadow: 0 22px 56px rgba(0, 0, 0, 0.45);
 }
 
 * {
@@ -28,132 +55,223 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  font-family: var(--font-rounded);
   background:
-    radial-gradient(ellipse 80% 50% at 20% 0%, var(--glow), transparent 60%),
-    radial-gradient(ellipse 70% 45% at 90% 100%, var(--glow), transparent 55%),
-    linear-gradient(160deg, var(--bg), color-mix(in srgb, var(--bg) 88%, var(--accent)));
+    radial-gradient(ellipse 85% 55% at 15% -5%, var(--glow-a), transparent 58%),
+    radial-gradient(ellipse 75% 50% at 95% 105%, var(--glow-b), transparent 55%),
+    linear-gradient(165deg, var(--bg-0), var(--bg-1) 45%, var(--bg-2));
   color: var(--paper);
   line-height: 1.55;
+  transition: background 0.45s ease, color 0.35s ease;
+}
+
+/* Liquid-glass theme toggle (top left) */
+.theme-toggle {
+  position: fixed;
+  top: max(1rem, env(safe-area-inset-top));
+  left: max(1rem, env(safe-area-inset-left));
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  background: var(--glass);
+  backdrop-filter: blur(22px) saturate(1.45);
+  -webkit-backdrop-filter: blur(22px) saturate(1.45);
+  color: var(--paper);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, background 0.35s ease, border-color 0.35s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.04);
+}
+
+.theme-toggle:active {
+  transform: scale(0.96);
+}
+
+.theme-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.theme-toggle .icon-sun,
+html[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  display: block;
 }
 
 main {
   max-width: 42rem;
   margin: 0 auto;
-  padding: 2.5rem 1.25rem 4rem;
+  padding: 4.5rem 1.35rem 4rem;
 }
 
-.site-mark {
+/* Brand block: icon above name */
+.brand-hero {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.85rem;
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.brand-hero--compact {
   margin-bottom: 1.75rem;
+}
+
+.brand-hero--compact .app-icon {
+  width: 5.5rem;
+  height: 5.5rem;
+}
+
+.brand-hero--compact .brand-name {
+  font-size: clamp(2rem, 7vw, 2.6rem);
+}
+
+.app-icon {
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 22%;
+  object-fit: cover;
+  box-shadow: var(--icon-shadow);
+  margin-bottom: 1.1rem;
+  transition: box-shadow 0.35s ease;
+}
+
+.brand-name {
+  margin: 0;
+  font-size: clamp(2.6rem, 9vw, 3.75rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--paper);
+}
+
+.brand-tagline {
+  margin: 0.65rem 0 0;
+  max-width: 22rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--paper-muted);
+  line-height: 1.45;
+}
+
+a.brand-link {
   text-decoration: none;
   color: inherit;
 }
 
-.site-mark img,
-.site-mark svg {
-  width: 2.4rem;
-  height: auto;
-  color: var(--paper);
-}
-
-.site-mark span {
-  font-size: 1.35rem;
+.page-title {
+  font-size: clamp(1.65rem, 5vw, 2.1rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.eyebrow {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
   margin: 0 0 0.5rem;
-}
-
-h1 {
-  font-size: clamp(1.8rem, 5vw, 2.4rem);
-  line-height: 1.15;
-  margin: 0 0 0.75rem;
+  text-align: center;
 }
 
 .lede {
-  color: var(--muted);
-  margin: 0 0 2rem;
+  color: var(--paper-muted);
+  margin: 0 0 1.75rem;
+  text-align: center;
+  font-weight: 500;
 }
 
-nav {
+/* Glass pill nav — same vocabulary as the app */
+.nav-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.75rem;
+  margin: 1.5rem 0;
 }
 
-nav a,
-.back {
-  display: inline-block;
-  padding: 0.7rem 1rem;
-  border-radius: 999px;
+.glass-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.35rem;
+  border-radius: var(--radius-pill);
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1px solid var(--surface-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: var(--paper);
   text-decoration: none;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.15s ease;
 }
 
-section {
+.glass-pill:hover {
+  transform: translateY(-1px);
+}
+
+.glass-pill--primary {
+  background: var(--btn-fill);
+  border-color: transparent;
+  color: var(--btn-text);
+}
+
+.glass-card {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 1.25rem;
-  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-card);
+  padding: 1.3rem 1.4rem;
   margin: 1rem 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-h2 {
+.glass-card h2 {
   font-size: 1.05rem;
+  font-weight: 800;
   margin: 0 0 0.65rem;
   color: var(--paper);
 }
 
-p,
-li {
-  color: var(--muted);
+.glass-card p,
+.glass-card li {
+  color: var(--paper-muted);
   margin: 0 0 0.75rem;
 }
 
-ul {
+.glass-card ul {
   margin: 0;
   padding-left: 1.2rem;
 }
 
-li {
+.glass-card li {
   margin-bottom: 0.5rem;
+}
+
+.glass-card p:last-child,
+.glass-card li:last-child {
+  margin-bottom: 0;
 }
 
 a.inline {
   color: var(--accent);
+  font-weight: 600;
 }
 
 footer {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: var(--muted);
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--paper-muted);
 }
 
-.home-hero {
-  margin-bottom: 2rem;
-}
-
-.home-card {
-  padding: 1.35rem;
-  border-radius: 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
+.back-row {
+  text-align: center;
   margin-top: 1.5rem;
-}
-
-.home-card p:last-child {
-  margin-bottom: 0;
 }

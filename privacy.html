@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,28 +7,56 @@
   <link rel="canonical" href="https://neur0tide.com/privacy">
   <title>Privacy Policy — neur0tide</title>
   <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/app-icon-light.png" type="image/png">
+  <script>
+    (function () {
+      var t = localStorage.getItem("neur0tide-theme");
+      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        document.documentElement.dataset.theme = "dark";
+    })();
+  </script>
 </head>
 <body>
+  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle bright and dark mode">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a6.5 6.5 0 0 0 11.5 11.5z"/>
+    </svg>
+  </button>
+
   <main>
-    <a class="site-mark" href="/">
-      <img src="/logo.svg" alt="" width="48" height="32">
-      <span>neur0tide</span>
+    <a class="brand-link" href="/">
+      <header class="brand-hero brand-hero--compact">
+        <img
+          class="app-icon"
+          id="appIcon"
+          src="/assets/app-icon-light.png"
+          data-light="/assets/app-icon-light.png"
+          data-dark="/assets/app-icon-dark.png"
+          width="88"
+          height="88"
+          alt=""
+        >
+        <p class="brand-name">neur0tide</p>
+      </header>
     </a>
 
-    <h1>Privacy Policy</h1>
+    <h2 class="page-title">Privacy Policy</h2>
     <p class="lede">Last updated: June 2026</p>
 
-    <section>
+    <section class="glass-card">
       <h2>Summary</h2>
       <p>
-        ster0mode develops the neur0tide iOS app. neur0tide does not collect,
+        stere0tide develops the neur0tide iOS app. neur0tide does not collect,
         sell, or share your personal data. Preferences and optional session
         feedback stay on your iPhone. The app does not use the internet.
       </p>
     </section>
 
-    <section>
+    <section class="glass-card">
       <h2>What stays on your device</h2>
       <ul>
         <li>Selected wave, session duration, and safety disclaimer acceptance</li>
@@ -40,7 +68,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="glass-card">
       <h2>What we do not do</h2>
       <ul>
         <li>No accounts or sign-in</li>
@@ -50,7 +78,7 @@
       </ul>
     </section>
 
-    <section>
+    <section class="glass-card">
       <h2>Audio</h2>
       <p>
         neur0tide generates audio on your device for headphone-based listening.
@@ -59,7 +87,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="glass-card">
       <h2>Children</h2>
       <p>
         neur0tide is not directed at children under 13. We do not knowingly collect
@@ -67,7 +95,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="glass-card">
       <h2>Changes</h2>
       <p>
         If this policy changes, we will update this page. Continued use of the app
@@ -75,7 +103,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="glass-card">
       <h2>Contact</h2>
       <p>
         Questions about privacy:
@@ -83,8 +111,9 @@
       </p>
     </section>
 
-    <p><a class="back" href="/">← Home</a></p>
-    <footer>© ster0mode · neur0tide iOS wellness audio</footer>
+    <p class="back-row"><a class="glass-pill" href="/">← Home</a></p>
+    <footer>© stere0tide · neur0tide iOS wellness audio</footer>
   </main>
+  <script src="/theme.js"></script>
 </body>
 </html>

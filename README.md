@@ -14,4 +14,4 @@ Deployed via **Vercel** from GitHub repo **neur0tide/neur0tide-web**.
 - https://neur0tide.com/privacy
 - https://neur0tide.com/support
 
-Contact: support@neur0tide.com · ster0mode develops neur0tide
+Contact: support@neur0tide.com · stere0tide develops neur0tide
