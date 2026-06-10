@@ -11,8 +11,8 @@
     if (icon) {
       icon.src =
         theme === "dark"
-          ? icon.dataset.dark || "/assets/app-icon-dark.png"
-          : icon.dataset.light || "/assets/app-icon-light.png";
+          ? icon.dataset.dark || "/assets/logo-dark.png"
+          : icon.dataset.light || "/assets/logo-light.png";
     }
 
     if (toggle) {

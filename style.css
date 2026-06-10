@@ -129,23 +129,27 @@ main {
   margin-bottom: 1.75rem;
 }
 
-.brand-hero--compact .app-icon {
-  width: 5.5rem;
-  height: 5.5rem;
+.brand-hero--compact .brand-logo {
+  height: 5.25rem;
 }
 
 .brand-hero--compact .brand-name {
   font-size: clamp(2rem, 7vw, 2.6rem);
 }
 
-.app-icon {
-  width: 7.5rem;
-  height: 7.5rem;
-  border-radius: 22%;
-  object-fit: cover;
-  box-shadow: var(--icon-shadow);
-  margin-bottom: 1.1rem;
-  transition: box-shadow 0.35s ease;
+/* Transparent button glyph — no icon plate */
+.brand-logo {
+  width: auto;
+  height: 8.5rem;
+  max-width: min(92vw, 22rem);
+  object-fit: contain;
+  margin-bottom: 0.85rem;
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 40, 0.14));
+  transition: filter 0.35s ease;
+}
+
+html[data-theme="dark"] .brand-logo {
+  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.42));
 }
 
 .brand-name {
