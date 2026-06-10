@@ -335,6 +335,15 @@ footer.site-credit .site-credit__line {
   color: var(--paper-muted);
 }
 
+.site-email a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-email a:hover {
+  color: var(--paper);
+}
+
 .back-row {
   text-align: center;
   margin-top: 1.5rem;
