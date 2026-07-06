@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="neur0tide blog: calm notes on binaural beats, evidence, privacy, and the technology behind the iOS app.">
+  <link rel="canonical" href="https://neur0tide.com/blog">
+  <title>Blog — neur0tide</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <script>
+    (function () {
+      var t = localStorage.getItem("neur0tide-theme");
+      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        document.documentElement.dataset.theme = "dark";
+    })();
+  </script>
+</head>
+<body>
+  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle bright and dark mode">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a6.5 6.5 0 0 0 11.5 11.5z"/>
+    </svg>
+  </button>
+
+  <main>
+    <a class="brand-link" href="/">
+      <header class="brand-hero brand-hero--compact">
+        <img
+          class="brand-logo"
+          id="appIcon"
+          src="/assets/logo-light.png"
+          data-light="/assets/logo-light.png"
+          data-dark="/assets/logo-dark.png"
+          width="240"
+          height="220"
+          alt=""
+        >
+        <p class="brand-name">neur0tide</p>
+      </header>
+    </a>
+
+    <h1 class="page-title">Blog</h1>
+    <p class="lede">Plain-spoken notes on the science, safety, privacy, and audio technology behind neur0tide.</p>
+
+    <section class="post-list" aria-label="Blog posts">
+      <a class="article-card" href="/blog/what-binaural-beats-can-and-cant-do">
+        <span class="article-kicker">Science and technology</span>
+        <h2 class="article-title">
+          What binaural beats can (and can't) actually do
+        </h2>
+        <p class="article-summary">
+          We read the research, then built the app around the difference between measured
+          effects and overconfident brainwave-tuning claims.
+        </p>
+        <span class="article-meta">July 6, 2026</span>
+      </a>
+    </section>
+
+    <p class="back-row"><a class="glass-pill" href="/">Home</a></p>
+    <footer class="site-credit">
+      <p class="site-credit__line">© stere0tide · neur0tide</p>
+    </footer>
+  </main>
+  <script src="/theme.js"></script>
+</body>
+</html>

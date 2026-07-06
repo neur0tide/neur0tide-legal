@@ -1,7 +1,9 @@
 {
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/support", "destination": "/support.html" }
+    { "source": "/support", "destination": "/support.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/blog/what-binaural-beats-can-and-cant-do", "destination": "/blog/what-binaural-beats-can-and-cant-do.html" }
   ],
   "headers": [
     {

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="We read 500+ studies on binaural beats. Here's the honest version: measurable effects, a contested brainwave-tuning story, and how neur0tide generates waves on-device.">
+  <link rel="canonical" href="https://neur0tide.com/blog/what-binaural-beats-can-and-cant-do">
+  <title>What binaural beats can (and can't) actually do — neur0tide</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <script>
+    (function () {
+      var t = localStorage.getItem("neur0tide-theme");
+      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        document.documentElement.dataset.theme = "dark";
+    })();
+  </script>
+</head>
+<body>
+  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle bright and dark mode">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a6.5 6.5 0 0 0 11.5 11.5z"/>
+    </svg>
+  </button>
+
+  <main class="article-main">
+    <a class="brand-link" href="/">
+      <header class="brand-hero brand-hero--compact">
+        <img
+          class="brand-logo"
+          id="appIcon"
+          src="/assets/logo-light.png"
+          data-light="/assets/logo-light.png"
+          data-dark="/assets/logo-dark.png"
+          width="240"
+          height="220"
+          alt=""
+        >
+        <p class="brand-name">neur0tide</p>
+      </header>
+    </a>
+
+    <nav class="nav-row nav-row--compact" aria-label="Site">
+      <a class="glass-pill" href="/">Home</a>
+      <a class="glass-pill" href="/blog">Blog</a>
+      <a class="glass-pill" href="/privacy">Privacy</a>
+      <a class="glass-pill" href="/support">Support</a>
+    </nav>
+
+    <article class="article-body">
+      <header class="article-header">
+        <p class="eyebrow">Science and build notes</p>
+        <h1>What binaural beats can (and can't) actually do - and why we built neur0tide around the difference</h1>
+        <p class="article-meta">Published July 6, 2026</p>
+        <p class="article-deck">
+          We read 500+ studies on binaural beats. Here's the honest version:
+          measurable effects on anxiety and some cognitive tasks, a contested
+          "brainwave tuning" story, and an app that respects the difference.
+        </p>
+      </header>
+
+      <p>
+        Binaural beats are easy to oversell. Search around for a few minutes
+        and you will find claims that a tone can reprogram your brain, force
+        you into an alpha state, fix sleep, erase anxiety, or unlock perfect
+        focus. That is not how we talk about neur0tide.
+      </p>
+
+      <p>
+        Before building the app, we mapped the research: 513 on-topic
+        peer-reviewed records from 1916 through 2026, including 7
+        meta-analyses, 12 systematic reviews, and 112 randomized or clinical
+        trials. The honest version is more interesting than the hype.
+        Binaural beats are associated with measurable effects on mood,
+        anxiety, and some cognitive tasks in controlled studies. The popular
+        claim that they "tune your brainwaves" to a target frequency is
+        scientifically contested.
+      </p>
+
+      <p>That distinction shaped the product.</p>
+
+      <h2>First, what is a binaural beat?</h2>
+      <p>
+        A binaural beat starts with two simple tones. One tone goes to the
+        left ear, and a slightly different tone goes to the right ear. If the
+        left ear receives 191.5 Hz and the right ear receives 200.5 Hz, the
+        difference is 9 Hz. With headphones, many listeners perceive a slow
+        beating or pulsing quality even though there is no separate 9 Hz tone
+        in the audio file.
+      </p>
+      <p>
+        That difference frequency is why people talk about "alpha," "theta,"
+        or "beta" beats. The risky leap is turning that into a guaranteed
+        brain-state claim. Your auditory system can respond to rhythmic
+        sound, but the evidence does not reliably show whole-brain entrainment
+        at the beat frequency.
+      </p>
+      <p>
+        So neur0tide uses the researched bands, but we describe them by use
+        case: Focus, Memory, Relax, and Sleep.
+      </p>
+
+      <h2>What the evidence supports best</h2>
+      <p>
+        Relaxation and anxiety are the strongest part of the literature. The
+        evidence map found 110 papers in this domain, including 3
+        meta-analyses, 5 systematic reviews, and 48 randomized trials. A lot
+        of the work comes from a practical, high-anxiety setting: patients
+        listening before surgery.
+      </p>
+      <p>
+        One landmark randomized controlled trial studied binaural-beat audio
+        and pre-operative anxiety in patients undergoing general anesthesia
+        (<a href="https://doi.org/10.1111/j.1365-2044.2005.04287.x">Padmanabhan et al., 2005</a>).
+        A later 2025 meta-analysis of perioperative trials reported lower
+        anxiety versus blank audio controls across 14 trials and 1,047
+        participants (<a href="https://doi.org/10.1016/j.ctim.2025.103299">DOI 10.1016/j.ctim.2025.103299</a>).
+        The effect estimate was large, but the studies varied a lot, so we do
+        not turn that into a guarantee.
+      </p>
+      <p>
+        This is why Relax is the wave we are most comfortable foregrounding.
+        The right claim is not "treats anxiety." It is: binaural beats have
+        their strongest evidence as a way to support relaxation.
+      </p>
+
+      <h2>Focus and memory are promising, but more modest</h2>
+      <p>
+        The focus and memory story is positive, but thinner. Across memory,
+        learning, attention, and general cognition, the research points to
+        small-to-medium average effects. A 2022 meta-analysis on memory and
+        attention reported an overall effect around g = 0.40
+        (<a href="https://doi.org/10.1007/s00426-022-01706-7">DOI 10.1007/s00426-022-01706-7</a>).
+        A broader 2018 meta-analysis across cognition, anxiety, and pain
+        reported g = 0.45
+        (<a href="https://doi.org/10.1007/s00426-018-1066-8">DOI 10.1007/s00426-018-1066-8</a>).
+      </p>
+      <p>
+        That is enough for "may support." It is not enough for "proven to
+        boost your productivity" or "makes you smarter." In the app, Focus
+        and Memory are built around the bands researchers actually study, but
+        the copy stays restrained.
+      </p>
+
+      <h2>Sleep is popular, but not settled</h2>
+      <p>
+        Sleep is one of the most common reasons people look for binaural
+        beats. It is also one of the places where we have to be most careful.
+      </p>
+      <p>
+        The evidence map found 37 sleep papers and 11 randomized trials, but
+        no dedicated sleep meta-analysis. Some studies are encouraging. One
+        controlled study looked at binaural beats with ASMR for sleep
+        induction (<a href="https://doi.org/10.3389/fnhum.2019.00425">DOI 10.3389/fnhum.2019.00425</a>),
+        and another studied a 3 Hz beat during sleep
+        (<a href="https://doi.org/10.3389/fnhum.2018.00387">DOI 10.3389/fnhum.2018.00387</a>).
+      </p>
+      <p>
+        But the trial evidence is not uniformly positive. A 2019 randomized
+        double-blind study on subclinical insomnia found minimal effects and
+        no significant between-group difference on the Insomnia Severity Index
+        (<a href="https://doi.org/10.1097/jcp.0000000000001097">DOI 10.1097/jcp.0000000000001097</a>).
+      </p>
+      <p>
+        That is why neur0tide's Sleep wave is framed as a calm, screen-dark
+        wind-down soundscape. It is not sold as an insomnia fix.
+      </p>
+
+      <h2>The brainwave-tuning story is the shaky part</h2>
+      <p>
+        The biggest claim in this category is also the one we avoid: that
+        binaural beats tune or synchronize your brainwaves to the target
+        frequency.
+      </p>
+      <p>
+        The 2023 systematic review by Ingendoh et al. is the key paper here
+        (<a href="https://doi.org/10.1371/journal.pone.0286023">DOI 10.1371/journal.pone.0286023</a>).
+        It reviewed EEG studies on the entrainment hypothesis and found an
+        inconsistent picture: five studies reported results in line with the
+        hypothesis, eight contradicted it, and one was mixed.
+      </p>
+      <p>
+        That does not mean binaural beats do nothing. It means the popular
+        mechanism is unresolved. The way you feel during a session may be
+        affected by ordinary, plausible mechanisms: settling into a timed
+        ritual, masking distracting noise, shifting attention, reducing
+        arousal, or simply taking ten minutes with headphones on.
+      </p>
+      <p>We think that is still useful. It just deserves honest language.</p>
+
+      <h2>How neur0tide generates the waves</h2>
+      <p>
+        neur0tide does not stream audio. It generates it on the device. The
+        app's audio core is a small oscillator model that runs through
+        AVAudioEngine. For the binaural mode used in v1, each audio frame is
+        built from two sine waves:
+      </p>
+      <pre><code>leftHz = carrierHz - (targetHz / 2)
+rightHz = carrierHz + (targetHz / 2)
+leftSample = sin(leftPhase) * amplitude
+rightSample = sin(rightPhase) * amplitude</code></pre>
+      <p>
+        The phases advance every sample according to the current sample rate.
+        For a 9 Hz Relax wave with a 196 Hz carrier, the app plays 191.5 Hz
+        to one ear and 200.5 Hz to the other. For a 16 Hz Focus wave with a
+        228 Hz carrier, it plays 220 Hz and 236 Hz.
+      </p>
+
+      <div class="table-wrap" role="region" aria-label="Shipped neur0tide wave settings" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th>Wave</th>
+              <th>Target beat</th>
+              <th>Carrier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Focus</td>
+              <td>16 Hz</td>
+              <td>228 Hz</td>
+            </tr>
+            <tr>
+              <td>Memory</td>
+              <td>12 Hz</td>
+              <td>216 Hz</td>
+            </tr>
+            <tr>
+              <td>Relax</td>
+              <td>9 Hz</td>
+              <td>196 Hz</td>
+            </tr>
+            <tr>
+              <td>Sleep</td>
+              <td>3 Hz</td>
+              <td>174 Hz</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Parameter changes are never jumped abruptly. The app ramps target
+        frequency, carrier frequency, and amplitude over two seconds with a
+        smooth curve. It also keeps hard safety caps in the audio layer:
+        target beat frequency is clamped to 1...40 Hz, carrier frequency to
+        110...440 Hz, and amplitude to 0...0.22.
+      </p>
+      <p>
+        That is less dramatic than most marketing copy in this space. It is
+        also the point. The app should feel calm because the audio is stable,
+        conservative, and predictable.
+      </p>
+
+      <h2>Privacy is part of the design</h2>
+      <p>
+        neur0tide has no accounts, analytics, ads, or network calls. Session
+        preferences and optional feedback stay on your iPhone. The feedback
+        loop is there for future on-device personalization, not surveillance.
+      </p>
+      <p>
+        That privacy posture is related to the science posture. If the
+        research says effects vary from person to person, the right response
+        is not to make louder claims. It is to build a quiet app that helps
+        you notice what works for you without uploading your state to someone
+        else's server.
+      </p>
+
+      <h2>Why we built around the difference</h2>
+      <p>
+        The app is called neur0tide because the category is built around
+        waves. But the product is not built around pretending we can force
+        your brain into a state.
+      </p>
+      <p>
+        It is built around a narrower, more defensible idea: rhythmic
+        headphone audio may support relaxation, attention, and wind-down for
+        some people; the evidence is strongest for relaxation; and the
+        mechanism is still being studied.
+      </p>
+      <p>
+        Start with Relax. Use headphones. Keep the volume comfortable. Treat
+        it as a wellness ritual, not a medical intervention.
+      </p>
+      <p>That is the version of binaural beats we can stand behind.</p>
+
+      <aside class="wellness-note">
+        neur0tide is a general wellness app, not a medical device, and
+        doesn't diagnose or treat any condition. If you have epilepsy, a
+        neurological condition, or a mental-health concern, talk to a
+        clinician before using rhythmic audio.
+      </aside>
+    </article>
+
+    <p class="back-row"><a class="glass-pill" href="/blog">All posts</a></p>
+    <footer class="site-credit">
+      <p class="site-credit__line">© stere0tide · neur0tide</p>
+    </footer>
+  </main>
+  <script src="/theme.js"></script>
+</body>
+</html>
