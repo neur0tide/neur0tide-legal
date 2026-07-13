@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://neur0tide.com/sitemap.xml
