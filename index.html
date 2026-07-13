@@ -18,7 +18,8 @@
   </script>
 </head>
 <body>
-  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle bright and dark mode">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="Toggle bright and dark mode">
     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
     </svg>
@@ -27,7 +28,7 @@
     </svg>
   </button>
 
-  <main>
+  <main id="main">
     <header class="brand-hero brand-hero--compact">
       <img
         class="brand-logo"
@@ -71,10 +72,10 @@
 
     <footer class="site-credit">
       <p class="site-credit__line">© stere0tide · neur0tide</p>
+      <p class="site-email">
+        <a href="mailto:support@neur0tide.com">support@neur0tide.com</a>
+      </p>
     </footer>
-    <p class="site-email">
-      <a href="mailto:support@neur0tide.com">support@neur0tide.com</a>
-    </p>
   </main>
   <script src="/theme.js"></script>
 </body>

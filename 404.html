@@ -10,11 +10,14 @@
     (function () {
       var t = localStorage.getItem("neur0tide-theme");
       if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        document.documentElement.dataset.theme = "dark";
     })();
   </script>
 </head>
 <body>
-  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle bright and dark mode">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="Toggle bright and dark mode">
     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
     </svg>
@@ -22,12 +25,12 @@
       <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a6.5 6.5 0 0 0 11.5 11.5z"/>
     </svg>
   </button>
-  <main>
+  <main id="main">
     <header class="brand-hero brand-hero--compact">
       <img class="brand-logo" id="appIcon" src="/assets/logo-light.png" data-light="/assets/logo-light.png" data-dark="/assets/logo-dark.png" width="240" height="220" alt="">
-      <h1 class="brand-name">neur0tide</h1>
+      <p class="brand-name">neur0tide</p>
     </header>
-    <h2 class="page-title">Page not found</h2>
+    <h1 class="page-title">Page not found</h1>
     <nav class="nav-row">
       <a class="glass-pill" href="/">Home</a>
       <a class="glass-pill" href="/privacy">Privacy</a>
