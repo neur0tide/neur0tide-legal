@@ -3,7 +3,8 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/support", "destination": "/support.html" },
     { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/blog/what-binaural-beats-can-and-cant-do", "destination": "/blog/what-binaural-beats-can-and-cant-do.html" }
+    { "source": "/blog/what-binaural-beats-can-and-cant-do", "destination": "/blog/what-binaural-beats-can-and-cant-do.html" },
+    { "source": "/blog/how-to-listen-to-binaural-beats", "destination": "/blog/how-to-listen-to-binaural-beats.html" }
   ],
   "headers": [
     {
