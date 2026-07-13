@@ -18,7 +18,8 @@
   </script>
 </head>
 <body>
-  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle bright and dark mode">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="Toggle bright and dark mode">
     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
     </svg>
@@ -27,7 +28,7 @@
     </svg>
   </button>
 
-  <main>
+  <main id="main">
     <a class="brand-link" href="/">
       <header class="brand-hero brand-hero--compact">
         <img
@@ -40,11 +41,11 @@
           height="220"
           alt=""
         >
-        <h1 class="brand-name">neur0tide</h1>
+        <p class="brand-name">neur0tide</p>
       </header>
     </a>
 
-    <h2 class="page-title">Privacy Policy</h2>
+    <h1 class="page-title">Privacy Policy</h1>
     <p class="lede">Last updated: June 2026</p>
 
     <section class="glass-card">

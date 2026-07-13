@@ -69,6 +69,25 @@ body {
   transition: background 0.45s ease, color 0.35s ease;
 }
 
+/* Skip-to-content link — hidden until keyboard focus */
+.skip-link {
+  position: fixed;
+  top: max(1rem, env(safe-area-inset-top));
+  left: 50%;
+  transform: translate(-50%, calc(-100% - 2rem));
+  z-index: 101;
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius-pill);
+  background: var(--btn-fill);
+  color: var(--btn-text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  transform: translate(-50%, 0);
+}
+
 /* Liquid-glass theme toggle (top left) */
 .theme-toggle {
   position: fixed;
